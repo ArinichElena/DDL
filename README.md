@@ -34,3 +34,79 @@
 #### Создать таблицы:
 <image src="https://github.com/ArinichElena/DDL/blob/main/Талицы%20по%20схемам.png">
 
+  <Справочники>
+  <summary>create table patient (
+	id BIGSERIAL primary key,
+	surname VARCHAR(100) not null,
+	name VARCHAR(100) not null,
+	patronymic VARCHAR(100),
+	birthday DATE,
+	medical_policy BIGINT UNIQUE,
+	gender VARCHAR(32)
+) tablespace ext_tabspace;
+
+ALTER TABLE patient SET SCHEMA directory_clinic;
+
+create table clinic (
+id SERIAL primary key,
+name TEXT not null,
+short_name TEXT not null,
+address TEXT not null,
+type_clinic_id INT not null references type_clinic
+) tablespace ext_tabspace;
+
+ALTER TABLE clinic SET SCHEMA directory_clinic;
+
+create table type_clinic (
+id SERIAL primary key,
+name VARCHAR(32) not null
+) tablespace ext_tabspace;
+
+ALTER TABLE type_clinic SET SCHEMA directory_clinic;
+
+create table laboratory (
+id SERIAL primary key,
+name TEXT not null,
+short_name TEXT not null,
+address TEXT not null,
+clinic_id INT not null references directory_clinic.clinic
+) tablespace ext_tabspace;
+
+ALTER TABLE laboratory SET SCHEMA directory_clinic;
+
+create table specialization (
+id SERIAL primary key,
+name VARCHAR(200) not null
+) tablespace ext_tabspace;
+
+ALTER TABLE specialization SET SCHEMA directory_clinic;
+
+create table doctor (
+	id SERIAL primary key,
+	surname VARCHAR(100) not null,
+	name VARCHAR(100) not null,
+	patronymic VARCHAR(100),
+	birthday DATE,
+	gender VARCHAR(32),
+	specialization_id INT not null references directory_clinic.specialization,
+	clinic_id INT not null
+) tablespace ext_tabspace;
+
+ALTER TABLE doctor SET SCHEMA directory_clinic;
+
+create table type_research (
+id SERIAL primary key,
+name VARCHAR(32) not null
+) tablespace ext_tabspace;
+
+ALTER TABLE type_research SET SCHEMA directory_clinic;
+
+create table research (
+id SERIAL primary key,
+name TEXT not null,
+short_name TEXT not null,
+type_research_id INT not null references directory_clinic.type_research
+) tablespace ext_tabspace;
+
+ALTER TABLE research SET SCHEMA directory_clinic;
+</summary>
