@@ -36,7 +36,7 @@
 
 <details>
   <summary>Скрипты на создание справочников</summary>
-  ~~~~sql
+```sql
 create table patient (  
 	id BIGSERIAL primary key,  
 	surname VARCHAR(100) not null,  
@@ -46,4 +46,4 @@ create table patient (
 	medical_policy BIGINT UNIQUE,  
 	gender VARCHAR(32)  
 ) tablespace ext_tabspace;  
-  ~~~~
+```
