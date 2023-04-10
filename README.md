@@ -34,7 +34,7 @@
 #### Создать таблицы:
 <image src="https://github.com/ArinichElena/DDL/blob/main/Талицы%20по%20схемам.png">
 
-  <Справочники>
+<details>
   <summary>create table patient (
 	id BIGSERIAL primary key,
 	surname VARCHAR(100) not null,
