@@ -37,14 +37,14 @@
 <details>
   <summary>Скрипты на создание справочников</summary>
   <ul>
-    <li> create table patient ( 
-	 id BIGSERIAL primary key, 
-	 surname VARCHAR(100) not null, 
-	 name VARCHAR(100) not null, 
-	 patronymic VARCHAR(100), 
-	 birthday DATE, 
-	 medical_policy BIGINT UNIQUE, 
-	 gender VARCHAR(32) 
+    <li> create table patient (  
+	 id BIGSERIAL primary key,  
+	 surname VARCHAR(100) not null,  
+	 name VARCHAR(100) not null,  
+	 patronymic VARCHAR(100),  
+	 birthday DATE,  
+	 medical_policy BIGINT UNIQUE,  
+	 gender VARCHAR(32)  
  ) tablespace ext_tabspace;</li>
     <li> Basic tools </li>
   </ul>
