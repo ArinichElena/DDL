@@ -34,13 +34,16 @@
 #### Создать таблицы:
 <image src="https://github.com/ArinichElena/DDL/blob/main/Талицы%20по%20схемам.png">
 
-> create table patient (  
-> id BIGSERIAL primary key,  
-> surname VARCHAR(100) not null,  
-> name VARCHAR(100) not null,  
-> patronymic VARCHAR(100),  
-> birthday DATE,  
-> medical_policy BIGINT UNIQUE,  
-> gender VARCHAR(32)  
-> ) tablespace ext_tabspace;  
+---
+```sql
+create table patient (
+	id BIGSERIAL primary key,
+	surname VARCHAR(100) not null,
+	name VARCHAR(100) not null,
+	patronymic VARCHAR(100),
+	birthday DATE,
+	medical_policy BIGINT UNIQUE,
+	gender VARCHAR(32)
+) tablespace ext_tabspace; 
+```
 
