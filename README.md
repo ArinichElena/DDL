@@ -35,6 +35,7 @@
 <image src="https://github.com/ArinichElena/DDL/blob/main/Талицы%20по%20схемам.png">
 
 ---
+* __Скрипты для справочников__
 ```sql
 create table patient (
 	id BIGSERIAL primary key,
@@ -45,5 +46,26 @@ create table patient (
 	medical_policy BIGINT UNIQUE,
 	gender VARCHAR(32)
 ) tablespace ext_tabspace; 
+
+create table clinic (
+id SERIAL primary key,
+name TEXT not null,
+short_name TEXT not null,
+address TEXT not null,
+type_clinic_id INT not null references type_clinic
+) tablespace ext_tabspace;
+
+create table type_clinic (
+id SERIAL primary key,
+name VARCHAR(32) not null
+) tablespace ext_tabspace;
+
+create table laboratory (
+id SERIAL primary key,
+name TEXT not null,
+short_name TEXT not null,
+address TEXT not null,
+clinic_id INT not null references directory_clinic.clinic
+) tablespace ext_tabspace;
 ```
 
