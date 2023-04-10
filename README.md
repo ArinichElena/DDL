@@ -36,3 +36,7 @@
 
 <details>
   <summary>create table patient</summary>
+  <ul>
+    <li> Algorithmics </li>
+    <li> Basic tools </li>
+  </ul>
